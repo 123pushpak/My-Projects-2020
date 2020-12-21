@@ -23,19 +23,19 @@ def get_info():
 def send_email(reciver, subject, message):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()  #starting transport layer security
-    server.login('goswamipushpak645@gmail.com', 'Pushpak645@')
+    server.login('your email Id', 'Password of your email ID')
     email = EmailMessage()
-    email['From'] = 'Pushpak Goswami'
+    email['From'] = 'Name Of Sender'
     email['To'] = reciver
     email['Subject'] = subject
     email.set_content(message)
     server.send_message(email)
-    #server.sendmail('goswamipushpak645@gmail.com', 'pushpakgoswami645@gmail.com', 'Hi man,'
-                                                                           #'How are you what do you have for me')
+    
+  #In place of multiple'x' write the correct email to whom you want to send mail 
 email_list = {
-              'a': 'aryanakul0526@gmail.com',
-              'pink': 'pushpakgoswami645@gmail.com',
-              'ball': 'digambargoswami2015@gmail.com'
+              'james': 'xxxxxxxxx@gmail.com',
+              'me': 'xxxxxxxxxx@gmail.com',
+              'ball': 'xxxxxx@gmail.com'
               }
 def get_email_info():
     talk('To whom you want to send E-mail')
@@ -47,7 +47,7 @@ def get_email_info():
     talk('Tell me the text in the mail')
     message = get_info()
     send_email(reciver, subject, message)
-    talk('Hey lazy ass. Your email is sent')
+    talk('Hey lazy. Your email is sent')
     talk('Do you want to send more email?')
     send_more = get_info()
     if 'yes' in send_more:
